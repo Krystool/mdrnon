@@ -10,7 +10,7 @@ const prefix = config.prefix
 //#region------------------LANCEMENT DU BOT------------------\\
 
 bot.on('ready', function () {
- bot.channels.get('512649334320398357').send("Je suis connecté.")
+ bot.channels.get('678269405083336734').send("Je suis connecté.")
 })
 //Message de connection
 
