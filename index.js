@@ -34,37 +34,17 @@ bot.on('message', message => {
 
 //#endregion
 
-//#region------------------MESSAGES AUTOMATIQUES------------------\\
-
-bot.on('message', message => {
-  const args = message.content.trim().split(/ +/g)
-  const command = args.shift().toLowerCase()
-   if (command === 'skyrim') { message.channel.send('I used to be an adventurer like you, then I took an arrow in the knee')}
-   if (command === 'dukenukem') { message.channel.send('I am here to kickass and chew bubblegum... And I\'m all out of bubble-gum.')}
-   if (command === 'dukenukem2') {message.channel.send("Mes couilles sur ton nez, t'auras l’air d'un dindon")}
-   if (command === 'g-man') { message.channel.send('The right man in the wrong place can make all the difference in the world.')}
-   if (command === 'price') { message.channel.send('The healthy human mind doesn\'t wake up in the morning thinking this is its last day on Earth. But I think that\'s a luxury, not a curse. To know you\'re close to the end is a kind of freedom. Good time to take... inventory.')}
-   if (command === 'halo') { message.channel.send('A hero need not speak. When he is gone, the world will speak for him.')}
-   if (command === 'alanwake') { message.channel.send('If our lives are already written, it would take a courageous man to change the script.')}
-   if (command === 'mortalkombat') {message.channel.send('Finish him!')}
-   if (command === 'chapelière') { message.channel.send('C\'est **ELLE**, Paysan !')}
-   if (command === 'vaas') {message.channel.send("Est-ce que je t'ai déjà donné la définition... du mot Folie ?")}
-})
-//Commandes Réponses automatiques
-
-//#endregion
-
 //#region------------------COMMANDES DIVERSES------------------\\
 bot.on('message', message => {
- if (message.content === prefix + 'comment ça marche') {
+ if (message.content === prefix + 'how') {
  var cçm_embed = new Discord.RichEmbed()
                     .setColor('RANDOM')
                     .setTitle(`Comment marche ${bot.user.username} ?`)
                     .setThumbnail(`${bot.user.avatarURL}`)
                     .addBlankField(true)
-                    .addField("Le Codage :", "**Andra** est codé sous Java avec Node.js et discord.js.")
+                    .addField("Le Codage :", "**CrystalBot** est codé sous JavaScript avec Node.js et discord.js.")
                     .addBlankField(true)
-                    .addField("L'Hébergement :","Je suis hébergé sur le PC d'Anderlaxe, je suis donc techniquement connecté en permanence.")
+                    .addField("L'Hébergement :","Je suis hébergé par Heroku, je suis donc techniquement connecté en permanence.")
                     .setFooter(bot.user.username)
                     .setTimestamp()
              message.channel.send(cçm_embed)
@@ -79,7 +59,7 @@ bot.on('message', message => {
                     .setTitle(`Comment marche ${bot.user.username} ?`)
                     .setThumbnail(`${bot.user.avatarURL}`)
                     .addBlankField(true)
-                    .addField("Présentation :", "Bienvenue à toi sur le " + message.guild.name + "! Des explications sont disponibles dans les 4 premiers channels de la catégorie \"Règles & Infos\" !\nSi tu as la moindre question n'hésite pas à demander à un Modérateur connecté !")
+                    .addField("Présentation :", "Bienvenue à toi sur " + message.guild.name + "! Des explications sont disponibles dans les channels de la catégorie \"Règles & Infos\" !\nSi tu as la moindre question n'hésite pas à demander à un Modérateur connecté !")
                     .addBlankField(true)
                     .setFooter(bot.user.username)
                     .setTimestamp()
@@ -142,7 +122,7 @@ bot.on('message', message => {
 
 bot.on('message', message => {
  if (message.content === prefix + 'help-staff') {
- let staffRole = message.guild.roles.find("name", "Administrateur", "Modérateur")
+ let staffRole = message.guild.roles.find("name", "Staff")
  if(message.member.roles.has(staffRole.id)){
                 var helpstaff_embed = new Discord.RichEmbed()
                 .setColor('#C11C17')
@@ -258,7 +238,7 @@ bot.on('message', message => {
  if (message.content === prefix + 'fin-rp') {
  var rp_embed = new Discord.RichEmbed()
                 .setColor('#C11C17')
-                .setTitle(`FIN DE LA SESSION RP`)
+                .setTitle(`FIN DE L'ÉVENEMENT`)
                 .setThumbnail(`${bot.user.avatarURL}`)
                 .addField("Date de fin de la session :", message.createdAt)
                 .addField("Fin de session demandée par", message.author.tag)
